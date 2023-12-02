@@ -1,4 +1,4 @@
-import 'package:example_get_clean/data/source/local/user_storage.dart';
+import 'package:example_get_clean/data/source/local/user_storage/user_storage.dart';
 import 'package:get/get.dart';
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';

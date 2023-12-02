@@ -5,7 +5,7 @@ class SampleObject {
 
   SampleObject({this.id, this.name, this.description});
 
-  SampleObject.fromJson(Map<String, dynamic> json) {
+  SampleObject.fromJson(dynamic json) {
     id = json['id'];
     name = json['name'];
     description = json['description'];
@@ -17,5 +17,10 @@ class SampleObject {
     data['name'] = name;
     data['description'] = description;
     return data;
+  }
+
+  @override
+  String toString() {
+    return 'SampleObject{id: $id, name: $name, description: $description}';
   }
 }

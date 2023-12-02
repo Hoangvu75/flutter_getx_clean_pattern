@@ -10,7 +10,7 @@ import 'infrastructure/navigation/routes.dart';
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
 
-  DataSourceConfig.init();
+  await DataSourceConfig.init();
 
   GetMaterialApp getMaterialApp = GetMaterialApp(
     themeMode: ThemeMode.system,
