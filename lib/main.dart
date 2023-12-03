@@ -5,6 +5,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 
 import 'domain/domain_config.dart';
+import 'infrastructure/infrastructure_config.dart';
 import 'infrastructure/navigation/navigation.dart';
 import 'infrastructure/navigation/routes.dart';
 
@@ -13,6 +14,7 @@ void main() async {
 
   await DataConfig.init();
   DomainConfig.init();
+  InfrastructureConfig.init();
 
   GetMaterialApp getMaterialApp = GetMaterialApp(
     themeMode: ThemeMode.system,
