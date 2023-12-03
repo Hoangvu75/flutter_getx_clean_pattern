@@ -7,7 +7,7 @@ part 'auth_api.g.dart';
 
 @RestApi()
 abstract class AuthApi {
-  factory AuthApi(Dio dio, {String baseUrl}) = _AuthApi;
+  factory AuthApi(Dio dio) = _AuthApi;
 
   @POST("/auth/login")
   Future<BaseResponse> login(@Body() Map<String, dynamic> body);

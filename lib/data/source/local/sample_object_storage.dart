@@ -16,22 +16,6 @@ class SampleObjectStorage extends GetxService {
     _sampleHiveObjectBox = Hive.box<SampleObject>();
   }
 
-  @override
-  void onReady() async {
-    super.onReady();
-    _sampleHiveObjectBox.clear();
-    for (int i = 0; i < 10; i++) {
-      await cacheSampleObject(
-        SampleObject(
-          id: DateTime.now().microsecondsSinceEpoch,
-          name: "Sample Object $i",
-          description: "This is a sample object",
-        ),
-      );
-    }
-    print("Sample Objects Cached: ${getSampleObjectList()}");
-  }
-
   Future<void> cacheSampleObject(SampleObject sampleObject) async {
     return _sampleHiveObjectBox.put(
       sampleObject.id.toString(),
@@ -53,5 +37,9 @@ class SampleObjectStorage extends GetxService {
       sampleObjects.add(_sampleHiveObjectBox.getAt(i));
     }
     return sampleObjects;
+  }
+
+  Future<void> clearSampleObject() async {
+    return _sampleHiveObjectBox.clear();
   }
 }

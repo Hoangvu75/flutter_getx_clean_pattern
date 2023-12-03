@@ -7,6 +7,6 @@ class SampleObjectApiClient extends BaseApiClientInterface {
   @override
   void onInit() {
     super.onInit();
-    api = SampleObjectApi(dio, baseUrl: baseURL);
+    api = SampleObjectApi(dio);
   }
 }

@@ -10,18 +10,34 @@ class HomeController extends GetxController {
   HomeController({
     required this.authRepository,
     required this.sampleObjectRepository,
+    required this.userStorage,
+    required this.sampleObjectStorage,
   });
 
   final AuthRepository authRepository;
   final SampleObjectRepository sampleObjectRepository;
-  late final UserStorage userStorage;
-  late final SampleObjectStorage sampleObjectStorage;
+  final UserStorage userStorage;
+  final SampleObjectStorage sampleObjectStorage;
 
   @override
-  void onInit() {
+  Future<void> onInit() async {
     super.onInit();
-    userStorage = Get.find();
-    sampleObjectStorage = Get.find();
+    sampleObjectStorage.clearSampleObject();
+    saveSampleObjectToLocal();
+    getSampleObjectFromLocal();
+
+    await userStorage.cacheToken("token");
+    print(userStorage.accessToken);
+
+    authRepository.login(username: "username", password: "password");
+  }
+
+  void saveSampleObjectToLocal() {
+    SampleObject sampleObject = SampleObject(
+      id: 1,
+      name: "sample",
+    );
+    sampleObjectStorage.cacheSampleObject(sampleObject);
   }
 
   void getSampleObject() async {
@@ -36,6 +52,7 @@ class HomeController extends GetxController {
     sampleObjectStorage.getSampleObjectList().forEach((element) {
       sampleObjects.add(element);
     });
+    print(sampleObjects);
   }
 
   void showSnackBar() {

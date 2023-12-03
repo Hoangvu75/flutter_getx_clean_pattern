@@ -12,11 +12,10 @@ class AuthRepositoryImpl implements AuthRepository {
     required String username,
     required String password,
   }) async {
-    var body = {
+    var response = await authApiClient.api.login({
       "username": username,
       "password": password,
-    };
-    var response = await authApiClient.api.login(body);
+    });
     return LoginResponse.fromJson(response.data);
   }
 }

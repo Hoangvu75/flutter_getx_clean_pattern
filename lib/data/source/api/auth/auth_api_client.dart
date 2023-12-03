@@ -7,6 +7,6 @@ class AuthApiClient extends BaseApiClientInterface {
   @override
   void onInit() {
     super.onInit();
-    api = AuthApi(dio, baseUrl: baseURL);
+    api = AuthApi(dio);
   }
 }

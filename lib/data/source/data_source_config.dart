@@ -17,14 +17,14 @@ class DataSourceConfig {
   }
 
   static void socketDataSourceConfig() {
-    Get.put(MessageSocket(), permanent: true);
+    Get.put(() => MessageSocket(), permanent: true);
   }
 
   static Future<void> localDataSourceConfig() async {
     final directory = await getApplicationDocumentsDirectory();
     Hive.defaultDirectory = directory.path;
 
-    Get.put(UserStorage(), permanent: true);
-    Get.put(SampleObjectStorage(), permanent: true);
+    Get.lazyPut(() => UserStorage());
+    Get.lazyPut(() => SampleObjectStorage());
   }
 }
