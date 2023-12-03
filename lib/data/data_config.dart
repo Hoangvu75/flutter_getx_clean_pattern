@@ -4,7 +4,7 @@ import 'package:path_provider/path_provider.dart';
 
 import 'source_export.dart';
 
-class DataSourceConfig {
+class DataConfig {
   static Future<void> init() async {
     apiDataSourceConfig();
     await localDataSourceConfig();
@@ -21,9 +21,7 @@ class DataSourceConfig {
   }
 
   static Future<void> localDataSourceConfig() async {
-    final directory = await getApplicationDocumentsDirectory();
-    Hive.defaultDirectory = directory.path;
-
+    Hive.defaultDirectory = (await getApplicationDocumentsDirectory()).path;
     Get.lazyPut(() => UserStorage());
     Get.lazyPut(() => SampleObjectStorage());
   }

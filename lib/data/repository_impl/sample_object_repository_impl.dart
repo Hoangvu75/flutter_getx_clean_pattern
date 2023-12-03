@@ -1,4 +1,4 @@
-import '../../domain/entities/models/sample_object_model.dart';
+import '../../domain/entities/models/sample_object.dart';
 import '../../domain/repositories/sample_object_repository.dart';
 import '../source/api/sample_object/sample_object_api_client.dart';
 

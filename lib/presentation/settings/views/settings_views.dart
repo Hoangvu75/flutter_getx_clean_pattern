@@ -2,20 +2,20 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import 'controllers/home.controller.dart';
+import '../controllers/settings_controller.dart';
 
-class HomeScreen extends GetWidget<HomeController> {
-  const HomeScreen({super.key});
+class SettingsView extends GetView<SettingsController> {
+  const SettingsView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('HomeScreen'),
+        title: const Text('SettingsScreen'),
         centerTitle: true,
       ),
       body: const Center(
         child: Text(
-          'HomeScreen is working',
+          'SettingsScreen is working',
           style: TextStyle(fontSize: 20),
         ),
       ),

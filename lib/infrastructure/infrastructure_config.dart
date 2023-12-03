@@ -1,13 +1,13 @@
 import 'package:get/get.dart';
 
-import 'repository_export.dart';
+import '../domain/repository_export.dart';
 
-class DomainConfig {
+class InfrastructureConfig {
   static void init() {
-    repositoryConfig();
+    serviceConfig();
   }
 
-  static void repositoryConfig() {
+  static void serviceConfig() {
     Get.lazyPut(() => AuthRepository(authApiClient: Get.find()));
     Get.lazyPut(() => SampleObjectRepository(sampleObjectApiClient: Get.find()));
   }

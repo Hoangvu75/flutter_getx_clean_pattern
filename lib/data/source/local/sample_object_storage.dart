@@ -1,4 +1,4 @@
-import '../../../domain/entities/models/sample_object_model.dart';
+import '../../../domain/entities/models/sample_object.dart';
 import '../../../infrastructure/extensions/dynamic_function.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
