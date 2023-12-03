@@ -17,7 +17,8 @@ class HomeControllerBinding extends Bindings {
     Get.lazyPut<HomeController>(
       () => HomeController(
         authRepository: authRepositoryBinding.authRepository,
-        sampleObjectRepository: sampleObjectRepositoryBinding.sampleObjectRepository,
+        sampleObjectRepository:
+            sampleObjectRepositoryBinding.sampleObjectRepository,
       ),
     );
   }

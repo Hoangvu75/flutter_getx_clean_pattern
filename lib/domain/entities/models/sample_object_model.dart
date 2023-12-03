@@ -5,7 +5,7 @@ class SampleObject {
 
   SampleObject({this.id, this.name, this.description});
 
-  SampleObject.fromJson(dynamic json) {
+  SampleObject.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     description = json['description'];

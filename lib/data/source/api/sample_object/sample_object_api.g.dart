@@ -19,13 +19,13 @@ class _SampleObjectApi implements SampleObjectApi {
   String? baseUrl;
 
   @override
-  Future<BaseResponse<dynamic>> get(int id) async {
+  Future<BaseResponse> get(int id) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<dynamic>>(Options(
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<BaseResponse>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -41,18 +41,18 @@ class _SampleObjectApi implements SampleObjectApi {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = BaseResponse<dynamic>.fromJson(_result.data!);
+    final value = BaseResponse.fromJson(_result.data!);
     return value;
   }
 
   @override
-  Future<BaseResponse<dynamic>> getAll() async {
+  Future<BaseResponse> getAll() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<dynamic>>(Options(
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<BaseResponse>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -68,7 +68,7 @@ class _SampleObjectApi implements SampleObjectApi {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = BaseResponse<dynamic>.fromJson(_result.data!);
+    final value = BaseResponse.fromJson(_result.data!);
     return value;
   }
 

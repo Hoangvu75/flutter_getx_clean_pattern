@@ -2,6 +2,7 @@ class LoginResponse {
   final String? refreshToken;
   final String? accessToken;
   final String? authToken;
+
   LoginResponse({this.accessToken, this.authToken, this.refreshToken});
 
   factory LoginResponse.fromJson(Map<String, dynamic> json) {

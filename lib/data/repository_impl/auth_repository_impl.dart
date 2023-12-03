@@ -1,11 +1,12 @@
-import 'package:example_get_clean/data/source/api/auth/auth_api_client.dart';
-
-import '../../domain/entities/responses/login_response.dart';
+import '../source/api/auth/auth_api_client.dart';
+import '../../domain/entities/api_responses/login_response.dart';
 import '../../domain/repositories/auth_repository.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
   AuthRepositoryImpl({required this.authApiClient});
+
   final AuthApiClient authApiClient;
+
   @override
   Future<LoginResponse> login({
     required String username,

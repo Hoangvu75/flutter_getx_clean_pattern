@@ -1,4 +1,5 @@
 import 'package:example_get_clean/domain/entities/models/sample_object_model.dart';
+import 'package:example_get_clean/infrastructure/extensions/dynamic_function.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 
@@ -8,20 +9,26 @@ class SampleObjectStorage extends GetxService {
   @override
   Future<void> onInit() async {
     super.onInit();
-    Hive.registerAdapter("SampleObject", SampleObject.fromJson);
+    Hive.registerAdapter(
+      (SampleObject).toString(),
+      SampleObject.fromJson.convertParamToDynamic(),
+    );
     _sampleHiveObjectBox = Hive.box<SampleObject>();
   }
 
   @override
   void onReady() async {
     super.onReady();
-    await cacheSampleObject(
-      SampleObject(
-        id: DateTime.now().microsecondsSinceEpoch,
-        name: "Sample Object",
-        description: "This is a sample object",
-      ),
-    );
+    _sampleHiveObjectBox.clear();
+    for (int i = 0; i < 10; i++) {
+      await cacheSampleObject(
+        SampleObject(
+          id: DateTime.now().microsecondsSinceEpoch,
+          name: "Sample Object $i",
+          description: "This is a sample object",
+        ),
+      );
+    }
     print("Sample Objects Cached: ${getSampleObjectList()}");
   }
 

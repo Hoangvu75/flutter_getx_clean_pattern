@@ -1,4 +1,4 @@
-class BaseResponse<T> {
+class BaseResponse {
   BaseResponse({
     this.code,
     this.message,
@@ -27,7 +27,9 @@ class BaseResponse<T> {
 
   List<T> parseList<T>(T Function(Map<String, dynamic>) parser) {
     if (data is List) {
-      return (data as List<dynamic>).map((e) => parser(e as Map<String, dynamic>)).toList();
+      return (data as List<dynamic>)
+          .map((e) => parser(e as Map<String, dynamic>))
+          .toList();
     } else {
       throw FormatException("Error: ", data);
     }

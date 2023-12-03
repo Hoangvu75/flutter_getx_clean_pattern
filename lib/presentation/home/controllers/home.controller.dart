@@ -1,5 +1,5 @@
-import 'package:example_get_clean/data/source/local/sample_object_storage/sample_object_storage.dart';
-import 'package:example_get_clean/data/source/local/user_storage/user_storage.dart';
+import 'package:example_get_clean/data/source/local/sample_object_storage.dart';
+import 'package:example_get_clean/data/source/local/user_storage.dart';
 import 'package:example_get_clean/domain/entities/models/sample_object_model.dart';
 import 'package:example_get_clean/domain/repositories/auth_repository.dart';
 import 'package:example_get_clean/domain/repositories/sample_object_repository.dart';

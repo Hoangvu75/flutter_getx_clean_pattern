@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
-import '../../../../domain/entities/responses/base_response.dart';
+import '../../../../domain/entities/api_responses/base_response.dart';
 
 part 'sample_object_api.g.dart';
 

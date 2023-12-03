@@ -1,7 +1,8 @@
-import 'package:example_get_clean/infrastructure/extensions/socket_extension.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:socket_io_client/socket_io_client.dart';
+
+import '../../../infrastructure/extensions/socket_extension.dart';
 
 class MessageSocket extends GetxService {
   late final Socket socket;

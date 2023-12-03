@@ -19,14 +19,14 @@ class _AuthApi implements AuthApi {
   String? baseUrl;
 
   @override
-  Future<BaseResponse<dynamic>> login(Map<String, dynamic> body) async {
+  Future<BaseResponse> login(Map<String, dynamic> body) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(body);
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<dynamic>>(Options(
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<BaseResponse>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -42,7 +42,7 @@ class _AuthApi implements AuthApi {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = BaseResponse<dynamic>.fromJson(_result.data!);
+    final value = BaseResponse.fromJson(_result.data!);
     return value;
   }
 
