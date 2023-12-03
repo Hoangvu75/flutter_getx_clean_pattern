@@ -1,9 +1,9 @@
-import 'package:example_get_clean/data/source/local/sample_object_storage.dart';
-import 'package:example_get_clean/data/source/local/user_storage.dart';
-import 'package:example_get_clean/domain/entities/models/sample_object_model.dart';
-import 'package:example_get_clean/domain/repositories/auth_repository.dart';
-import 'package:example_get_clean/domain/repositories/sample_object_repository.dart';
-import 'package:example_get_clean/infrastructure/utils/snack_bar_util.dart';
+import '../../../data/source/local/sample_object_storage.dart';
+import '../../../data/source/local/user_storage.dart';
+import '../../../domain/entities/models/sample_object_model.dart';
+import '../../../domain/repositories/auth_repository.dart';
+import '../../../domain/repositories/sample_object_repository.dart';
+import '../../../infrastructure/utils/snack_bar_util.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {

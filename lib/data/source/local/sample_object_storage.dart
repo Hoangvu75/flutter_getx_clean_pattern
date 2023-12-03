@@ -1,5 +1,5 @@
-import 'package:example_get_clean/domain/entities/models/sample_object_model.dart';
-import 'package:example_get_clean/infrastructure/extensions/dynamic_function.dart';
+import '../../../domain/entities/models/sample_object_model.dart';
+import '../../../infrastructure/extensions/dynamic_function.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 

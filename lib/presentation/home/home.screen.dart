@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'controllers/home.controller.dart';
 
 class HomeScreen extends GetView<HomeController> {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

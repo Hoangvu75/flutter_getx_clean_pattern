@@ -8,7 +8,7 @@ import 'infrastructure/navigation/navigation.dart';
 import 'infrastructure/navigation/routes.dart';
 
 void main() async {
-  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
 
   await DataSourceConfig.init();
 

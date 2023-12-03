@@ -8,7 +8,8 @@ class SampleObjectRepositoryBinding {
 
   SampleObjectRepositoryBinding() {
     sampleObjectApiClient = Get.find();
-    sampleObjectRepository =
-        SampleObjectRepository(sampleObjectApiClient: sampleObjectApiClient);
+    sampleObjectRepository = SampleObjectRepository(
+      sampleObjectApiClient: sampleObjectApiClient,
+    );
   }
 }
